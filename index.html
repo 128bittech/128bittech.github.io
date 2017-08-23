@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>128bit tech.</title>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Oswald:400,300|Montserrat);
+
+
+    @keyframes fade {
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @-webkit-keyframes fade {
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes scroll {
+        0%   { top: 125%; }
+        100% { top: -25%; }
+    }
+
+    @-webkit-keyframes scroll {
+        0%   { top: 125%; }
+        100% { top: -25%; }
+    }
+
+
+
+
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0; padding: 0;
+    }
+
+    html, body {
+        width: 100%; height: 100%;
+        margin: 0; padding: 0;
+
+        background: linear-gradient(to bottom, #FFFFFF 0%,#CCCCCC 100%);
+    }
+
+    body {
+        display: table;
+    }
+
+    section#main {
+        display: table-cell;
+        width: 100%; height: 100%;
+
+        vertical-align: middle;
+        text-align: center;
+
+        font-family: 'Oswald';   
+        color: #333;
+    }
+
+    section#main div#description {
+        display: inline-block;
+    }
+
+    section#main h1,
+    section#main h3 {
+       line-height: 110%;
+       font-weight: 400;
+       text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
+    }
+
+    section#main h1 { font-size: 5em; }
+    section#main h3 { font-size: 1.5em; }
+
+
+    section#main > div { vertical-align: middle; }
+    section#main div#logo { margin-right: 1em; }
+
+    div#logo {
+        display: inline-block; 
+
+        width: 10em;
+        height: 10em;
+    }
+
+    div#logo div.container {
+        float: left;
+        position: relative;
+        display: inline-block; 
+        width: 50%; height: 50%;
+
+        padding: 0.5em;
+
+        box-sizing: border-box;
+    }
+
+    div.core {
+        width: 100%; height: 100%;
+        border-radius: 15%;
+
+        background: #666;
+        background-size: cover !important;
+
+        box-shadow: 0.25em  0.25em  0 rgb(200, 200, 200);
+        cursor: pointer;
+    }
+
+    div.core.fox             { background: url('./fox.jpg'); }
+    div.core.malkoring       { background: url('./malkoring.jpg'); }
+    div.core.dalgona         { background: url('./dalgona.jpg'); }
+
+    div.core.not-initialized {
+        position: relative;
+        overflow: hidden;
+        
+        background: transparent;
+        z-index: 1;
+
+        text-align: left; 
+        color: white;
+    }
+
+    div.core.not-initialized:before {
+        content: '';
+        display: block;
+        position: absolute;
+
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background: radial-gradient(ellipse at center, rgba(90,90,90,1) 0%, rgba(60,60,60,1) 100%);
+
+        z-index: -1;
+    }
+
+    div.core.not-initialized:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0; left: 0;
+        width: 100%; height: 25%;
+
+        background: rgba(0, 0, 0, 0.4);
+
+        -webkit-animation: scroll 2s infinite linear;
+        animation: scroll 2s infinite linear;
+
+        -webkit-filter: blur(1px);
+        filter: blur(1px);
+    }
+
+    div.core.not-initialized span.prompt { 
+        margin: 0.5em; 
+
+        font-weight: bold;
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
+    }
+
+    div.core.not-initialized span.prompt span:last-child { 
+        -webkit-animation: fade 0.5s infinite linear;
+        -webkit-animation-direction: alternate;
+        animation: fade 0.5s infinite linear;
+        animation-direction: alternate;
+    }
+
+
+</style>
+</head>
+<body>
+    <section id="main">
+        <div id="logo">
+            <div class="container"><div class="core malkoring" title="Core #1: malkoring (32-bit)"></div></div>
+            <div class="container"><div class="core dalgona"   title="Core #2: dalgona (32-bit)"></div></div>
+            <div class="container"><div class="core fox"       title="Core #3: 64-bit fox (running in 32-bit compatibility mode)"></div></div>
+            <div class="container">
+                <div class="core not-initialized" title="Core #4: not initialized yet...">
+                    <span class="prompt">&gt; <span>_</span></span>
+                </div>
+            </div>
+        </div>
+        <div id="description">
+            <h1>128bit tech.</h1>
+            <h3>waiting for last core to be initialized...</h3>
+        </div>
+    </section>
+</body>
+</html>
